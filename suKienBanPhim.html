@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body onload="docReady()">
+<img id="doge" src="doge.gif" style="position: absolute" ; height="100" width="80">
+<script>
+    function uparrowpressed() {
+        let elemet = document.getElementById('doge');
+        elemet.style.top = + (elemet.style.top) -40 + "px";
+    }
+    function downarrowpressed() {
+        let elemet = document.getElementById('doge');
+        elemet.style.top = +(elemet.style.top) + 40 + "px";
+    }
+    function leftarrowpressed() {
+        let elemet = document.getElementById('doge');
+        elemet.style.top = +(elemet.style.left) - 40 + "px";
+    }
+    function rightarrowpressed() {
+        let elemet = document.getElementById('doge');
+        elemet.style.top = +(elemet.style.left) + 40 + "px";
+    }
+    function moveSelection(evt) {
+        switch (evt.keyCode) {
+            case 37:
+                leftarrowpressed();
+                break;
+            case 39:
+                rightarrowpressed();
+                break;
+            case 38:
+                uparrowpressed();
+                break;
+            case 40:
+                downarrowpressed();
+                break;
+        }
+    }
+    function docReady() {
+        window.addEventListener('keydown', moveSelection);
+    }
+</script>
+</body>
+</html>
